@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <title>System Active</title>
     <style>
+        @media (max-width: 600px) {
+    .card {
+        padding: 30px;
+        width: 80%; /* Shrinks the card to fit small screens */
+        border-radius: 16px;
+    }
+    
+    h1 {
+        font-size: 1.5rem; /* Reduces text size for mobile */
+        letter-spacing: 2px;
+    }
+}
         body { background: #0d1117; color: #58a6ff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0 }
-        .card { border: 1px solid #30363d; padding: 40px; border-radius: 12px; background: #161b22 text-align: center; }
-        h1 { color: #238636; }
+        .card {
+    /* ... keep your existing card code and add this line ... */
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Lifts the card up */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Deepens the shadow */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Brightens the edge */
+}
+        h1 { 
+    color: #00ff88; 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.7), 
+                 0 0 20px rgba(0, 255, 136, 0.5);
+    transition: 0.3s;
+}
+
+h1:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
+    cursor: default;
+}
     </style>
 </head>
 <body>
