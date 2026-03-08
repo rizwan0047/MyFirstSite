@@ -5,49 +5,10 @@
     <title>System Active</title>
     <style>
         html {
-    scroll-behavior: smooth;
-}
-        .btn {
-    background: linear-gradient(90deg, #00ff88, #00bdff);
-    color: #0d1117;
-    padding: 15px 35px;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-    z-index: 20;
-    position: relative;
-}
+            scroll-behavior: smooth;
+        }
 
-.btn:hover {
-    transform: scale(1.1); /* This creates the pop-up effect */
-    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
-}
-
-.btn:active {
-    transform: scale(0.95); /* Adds a "click" feel */
-}
-        .typewriter {
-    overflow: hidden; 
-    border-right: .15em solid #00ff88; 
-    white-space: nowrap; 
-    margin: 0 auto; 
-    letter-spacing: .15em; 
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #00ff88; }
-}
+        /* 1. BODY FIX: Changed flex to block to allow vertical stacking */
         body { 
             background: linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)), 
                         url('bg.png'); 
@@ -56,12 +17,20 @@
             background-attachment: fixed;
             color: #58a6ff; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
             margin: 0; 
-            overflow: hidden;
+            display: block; /* Required to stack sections */
+            width: 100%;
+            overflow-x: hidden; /* Prevents side-scrolling */
+            overflow-y: auto;   /* Enables downward scrolling */
+        }
+
+        /* 2. CARD FIX: Centers content within the first 100vh view */
+        .card-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
         }
 
         .card { 
@@ -77,6 +46,49 @@
             z-index: 10;
         }
 
+        .btn {
+            background: linear-gradient(90deg, #00ff88, #00bdff);
+            color: #0d1117;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            z-index: 20;
+            position: relative;
+        }
+
+        .btn:hover {
+            transform: scale(1.1); 
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .typewriter {
+            overflow: hidden; 
+            border-right: .15em solid #00ff88; 
+            white-space: nowrap; 
+            margin: 0 auto; 
+            letter-spacing: .15em; 
+            animation: 
+              typing 3.5s steps(40, end),
+              blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff88; }
+        }
+
         h1 {
             font-size: 2.8rem;
             color: #fff;
@@ -89,26 +101,17 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
-
-        .btn {
-            background: linear-gradient(90deg, #00ff88, #00bdff);
-            color: #0d1117;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
     </style>
 </head>
 <body>
-    <div class="card" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <h1>SYSTEM ACTIVE</h1>
-        <p class="typewriter">Precision build by Rizwan</p>
-        <button class="btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
-            Initiate Protocol
-        </button>
+    <div class="card-container">
+        <div class="card">
+            <h1>SYSTEM ACTIVE</h1>
+            <p class="typewriter">Precision build by Rizwan</p>
+            <button class="btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
+                Initiate Protocol
+            </button>
+        </div>
     </div>
 
     <section id="portfolio" style="min-height: 100vh; width: 100%; background: rgba(13, 17, 23, 0.95); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 0;">
