@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <title>System Active</title>
     <style>
+        .typewriter {
+    overflow: hidden; 
+    border-right: .15em solid #00ff88; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00ff88; }
+}
         body { 
             background: linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)), 
                         url('bg.png'); 
@@ -61,7 +81,7 @@
 <body>
     <div class="card">
         <h1>SYSTEM ACTIVE</h1>
-        <p>Precision build by Rizwan</p>
+        <p class="typewriter">Precision build by Rizwan</p>
         <button class="btn">Initiate Protocol</button>
     </div>
 </body>
