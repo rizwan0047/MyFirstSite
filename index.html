@@ -4,52 +4,61 @@
     <meta charset="UTF-8">
     <title>System Active</title>
     <style>
-       body { 
-            background: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 0.8)), 
+        body { 
+            background: linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.85)), 
                         url('bg.png'); 
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: #58a6ff; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            height: 100vh; 
+            min-height: 100vh; 
             margin: 0; 
-            overflow: hidden;
         }
 
         .card { 
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1); 
-            padding: 60px; 
-            border-radius: 24px; 
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
+            max-width: 400px;
+            width: 90%;
         }
 
         h1 {
             font-size: 2.5rem;
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
-            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            color: #58a6ff;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
         }
 
         .btn {
-            margin-top: 25px;
-            padding: 12px 30px;
             background: linear-gradient(90deg, #00ff88, #00bdff);
             color: #0d1117;
+            padding: 12px 25px;
             border: none;
             border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
         }
     </style>
 </head>
