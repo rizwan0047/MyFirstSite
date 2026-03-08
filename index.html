@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <title>System Active</title>
     <style>
+        .btn {
+    background: linear-gradient(90deg, #00ff88, #00bdff);
+    color: #0d1117;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    z-index: 20;
+    position: relative;
+}
+
+.btn:hover {
+    transform: scale(1.1); /* This creates the pop-up effect */
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+}
+
+.btn:active {
+    transform: scale(0.95); /* Adds a "click" feel */
+}
         .typewriter {
     overflow: hidden; 
     border-right: .15em solid #00ff88; 
