@@ -18,48 +18,39 @@
             margin: 0; 
             overflow: hidden;
         }
-    /* ... keep your existing card code and add this line ... */
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-}
 
-.card:hover {
-    transform: translateY(-10px); /* Lifts the card up */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Deepens the shadow */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Brightens the edge */
-}
-.btn {
-    margin-top: 25px;
-    padding: 12px 30px;
-    background: linear-gradient(90deg, #00ff88, #00bdff);
-    color: #0d1117;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
-}
+        .card { 
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 60px; 
+            border-radius: 24px; 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
 
-.btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
-    letter-spacing: 1px;
-}
-        h1 { 
-    color: #00ff88; 
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 0 0 10px rgba(0, 255, 136, 0.7), 
-                 0 0 20px rgba(0, 255, 136, 0.5);
-    transition: 0.3s;
-}
+        .card:hover {
+            transform: translateY(-10px);
+        }
 
-h1:hover {
-    color: #ffffff;
-    text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
-    cursor: default;
-}
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #00ff88, #00bdff);
+            color: #0d1117;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
     </style>
 </head>
 <body>
