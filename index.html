@@ -214,6 +214,13 @@
     </div>
 </div>
 <script>
+    // Close modal if user clicks anywhere outside of the white box
+window.onclick = function(event) {
+    let modal = document.getElementById('orderModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
     function openOrder(itemName) {
         document.getElementById('orderModal').style.display = 'flex';
         window.currentProduct = itemName;
