@@ -4,6 +4,72 @@
     <meta charset="UTF-8">
     <title>System Active</title>
     <style>
+        /* --- POWERBANK GRID STYLES --- */
+.portfolio-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card img {
+    width: 100%;
+    height: 320px; /* Keeps them uniform */
+    object-fit: cover;
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: #00ff88;
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15);
+}
+        /* This makes the grid container */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the whole grid */
+}
+
+/* This tames the images */
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden; /* Clips the image to the rounded corners */
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    transition: 0.3s;
+}
+
+.project-card img {
+    width: 100%;
+    height: 300px; /* Forces all images to be the same height */
+    object-fit: cover; /* Crops them neatly instead of stretching */
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ff88;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+}
         .portfolio-section {
     padding: 80px 20px;
     background: rgba(0, 0, 0, 0.8); /* Dark background to make posters pop */
@@ -196,17 +262,12 @@
             <p>Project Grid Loading...</p>
         </div>
         <section id="portfolio" class="portfolio-section">
+    <section id="portfolio" class="portfolio-section">
     <div class="gallery-grid">
-        <div class="gallery-grid">
-    <p>Project Grid Loading...</p> <div class="project-card"><img src="power-bank/powerbank1.jpg"></div>
-    <div class="project-card"><img src="power-bank/powerbank2.jpg"></div>
-    <div class="project-card"><img src="power-bank/powerbank3.jpg"></div>
-    <div class="project-card"><img src="power-bank/powerbank4.jpg"></div>
-</div>
-        <div class="project-card"><img src="power-bank/powerbank1.jpg"></div>
-        <div class="project-card"><img src="power-bank/powerbank2.jpg"></div>
-        <div class="project-card"><img src="power-bank/powerbank3.jpg"></div>
-        <div class="project-card"><img src="power-bank/powerbank4.jpg"></div>
+        <div class="project-card"><img src="power-bank/powerbank1.jpg" alt="View 1"></div>
+        <div class="project-card"><img src="power-bank/powerbank2.jpg" alt="View 2"></div>
+        <div class="project-card"><img src="power-bank/powerbank3.jpg" alt="View 3"></div>
+        <div class="project-card"><img src="power-bank/powerbank4.jpg" alt="View 4"></div>
     </div>
 </section>
     </section>
