@@ -94,7 +94,7 @@
     <a href="#" class="logo">RIZWAN STORE</a>
     <div class="search-bar">
         <input type="text" placeholder="Search for tech, powerbanks, accessories...">
-        <button>Search</button>
+        <button class="search-btn" onclick="searchProducts()">Search</button>
     </div>
     <div class="nav-tools">
         <div>Account & Lists</div>
@@ -258,6 +258,38 @@
     </div>
 </div>
 <script>
+    function searchProducts() {
+    let input = document.querySelector('.search-bar input').value.toLowerCase();
+    let cards = document.querySelectorAll('.product-card');
+
+    cards.forEach(card => {
+        let title = card.querySelector('h3').innerText.toLowerCase();
+        if (title.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+    function searchProducts() {
+    // 1. Get the text from the search input
+    let input = document.querySelector('.search-bar input').value.toLowerCase();
+    
+    // 2. Get all product cards
+    let cards = document.querySelectorAll('.product-card');
+
+    cards.forEach(card => {
+        // 3. Get the product title
+        let title = card.querySelector('h3').innerText.toLowerCase();
+        
+        // 4. If the title matches the search, show it; otherwise, hide it
+        if (title.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
     // Close modal if user clicks anywhere outside of the white box
 window.onclick = function(event) {
     let modal = document.getElementById('orderModal');
