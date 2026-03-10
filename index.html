@@ -223,6 +223,39 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
+        /* This centers the grid and limits the image sizes */
+.portfolio-section {
+    padding: 80px 20px;
+    background: #0a0a0a;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto; /* This moves it down from the header */
+}
+
+.project-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    transition: 0.4s;
+}
+
+.project-card img {
+    width: 100%;
+    height: 400px; /* Adjust this to make your posters look perfect */
+    object-fit: cover; /* This prevents stretching */
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ff88;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
     </style>
 </head>
 <body>
