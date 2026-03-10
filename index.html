@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rizwan Store | Tech & Gear</title>
     <style>
+        /* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    /* Stacks the sidebar and the main content vertically */
+    .container {
+        flex-direction: column !important;
+    }
+
+    /* Makes the sidebar full width on mobile */
+    aside {
+        width: 100% !important;
+        padding: 15px !important;
+        border-right: none !important;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Makes the product grid use all available space */
+    .grid {
+        grid-template-columns: 1fr 1fr !important; /* Shows 2 products per row */
+        gap: 10px !important;
+        padding: 10px !important;
+    }
+
+    /* Adjusts the header for small screens */
+    header {
+        padding: 10px !important;
+    }
+}
         /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .container {
