@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rizwan Store | Tech & Gear</title>
     <style>
+        /* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stacks sidebar on top of products */
+    }
+    
+    aside {
+        width: 100% !important; /* Sidebar takes full width on phone */
+        margin-bottom: 20px;
+    }
+
+    header {
+        flex-wrap: wrap; /* Allows search bar to drop to a new line */
+    }
+
+    .search-bar {
+        order: 3; /* Puts search bar below logo and cart on mobile */
+        width: 100%;
+        margin-top: 10px;
+    }
+}
         /* --- ORDER MODAL STYLES --- */
 #orderModal {
     display: none;
