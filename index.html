@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rizwan Store | Tech & Gear</title>
     <style>
+        .rating {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
         @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -129,16 +135,35 @@
             <div id="timer" style="font-size: 1.2rem; font-weight: bold; color: #febd69; margin-top: 10px;">Ends in: 02:00:00</div>
         </div>
         <div class="grid">
-            <div class="product-card" data-category="accessories">
-    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smart Watch">
-    <div class="product-info">
-        <h3>Active Series Smart Watch</h3>
-        <div style="color: #febd69; font-size: 0.85rem;">★★★★☆ (290)</div>
-        <div class="price">$59.99</div>
-        <button class="buy-btn" onclick="openOrder('Smart Watch')">Add to Cart</button>
+    <div class="product-card" data-category="accessories">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smart Watch">
+        <div class="product-info">
+            <h3>Active Series Smart Watch</h3>
+            <div class="rating">
+                <span style="color: #febd69;">★★★★☆</span> 
+                <span style="color: #007185; font-size: 0.8rem; margin-left: 5px;">(290 reviews)</span>
+            </div>
+            <div class="price">$59.99</div>
+            <button class="buy-btn" onclick="openOrder('Smart Watch')">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card" data-category="accessories">
+        <span class="discount">10% OFF</span>
+        <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=800&q=80" alt="Gaming Mouse">
+        <div class="product-info">
+            <h3>RGB Precision Gaming Mouse</h3>
+            <div class="rating">
+                <span style="color: #febd69;">★★★★★</span> 
+                <span style="color: #007185; font-size: 0.8rem; margin-left: 5px;">(56 reviews)</span>
+            </div>
+            <div class="price">$25.00</div>
+            <button class="buy-btn" onclick="openOrder('Gaming Mouse')">Add to Cart</button>
+        </div>
     </div>
 </div>
-
+    </div>
+</div>
 <div class="product-card" data-category="accessories">
     <span class="discount">10% OFF</span>
     <div style="height: 200px; overflow: hidden;">
