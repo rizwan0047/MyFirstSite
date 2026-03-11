@@ -315,6 +315,29 @@ document.addEventListener('mouseleave', (e) => {
     // Show toast every 25 seconds
     setInterval(showOrderToast, 25000);
     setTimeout(showOrderToast, 5000); // Show first one after 5 seconds
+    function applyDiscount() {
+    const btn = document.getElementById('claimBtn');
+    if (!btn) return;
+
+    // 1. Disable the button so they can't spam it
+    btn.disabled = true;
+
+    // 2. Change the appearance to "Success" state
+    btn.style.background = "#25d366"; // WhatsApp green for trust
+    btn.style.color = "white";
+    btn.innerHTML = "✓ CODE APPLIED: STAY10";
+
+    // 3. Automatically copy the code for them (Pro move)
+    navigator.clipboard.writeText("STAY10").then(() => {
+        console.log("Code copied to clipboard");
+    });
+
+    // 4. Close the popup automatically after a brief pause
+    setTimeout(() => {
+        const popup = document.getElementById('exitPopup');
+        if (popup) popup.style.display = 'none';
+    }, 1500);
+}
 </script>
 
 <div id="whatsapp-chat" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
