@@ -172,28 +172,47 @@
 </div>
 
 <<script>
-    function startTimer(durationInMinutes) {
-    let timer = durationInMinutes * 60;
-    setInterval(function () {
-        let hours = Math.floor(timer / 3600);
-        let minutes = Math.floor((timer % 3600) / 60);
-        let seconds = timer % 60;
+   function startTimer() {
+        let endTime = localStorage.getItem('flashSaleEnd');
 
-        document.getElementById('timer').textContent = 
-            `Ends in: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        // If no end time is saved, or if the saved time has already passed
+        if (!endTime || new Date().getTime() > endTime) {
+            endTime = new Date().getTime() + (120 * 60 * 1000); // 2 hours from now
+            localStorage.setItem('flashSaleEnd', endTime);
+        }
 
-        if (--timer < 0) timer = 0;
-    }, 1000);
-}
-startTimer(120); // Sets a 2-hour countdown
+        const timerInterval = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = endTime - now;
+
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const timerElement = document.getElementById('timer');
+            if (timerElement) {
+                timerElement.textContent = `Ends in: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                if (timerElement) timerElement.textContent = "EXPIRED";
+                localStorage.removeItem('flashSaleEnd');
+            }
+        }, 1000);
+    }
+
     function searchProducts() {
-        let input = document.querySelector('.search-bar input').value.toLowerCase();
-        let cards = document.querySelectorAll('.product-card');
+        const input = document.querySelector('.search-bar input').value.toLowerCase();
+        const cards = document.querySelectorAll('.product-card');
         cards.forEach(card => {
-            let title = card.querySelector('h3').innerText.toLowerCase();
+            const title = card.querySelector('h3').innerText.toLowerCase();
             card.style.display = title.includes(input) ? "block" : "none";
         });
     }
+
+    // Initialize the timer on page load
+    startTimer();
 
     function filterCategory(cat) {
         let cards = document.querySelectorAll('.product-card');
