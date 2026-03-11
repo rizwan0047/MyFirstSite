@@ -176,6 +176,19 @@
 </div>
 
 <script>
+    function searchProducts() {
+    const input = document.querySelector('.search-bar input').value.toLowerCase();
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+        const title = product.querySelector('h3').innerText.toLowerCase();
+        if (title.includes(input)) {
+            product.style.display = "flex"; // Match found
+        } else {
+            product.style.display = "none"; // Hide if no match
+        }
+    });
+}
     let popupShown = false;
 document.addEventListener('mouseleave', (e) => {
     if (e.clientY < 0 && !popupShown) {
