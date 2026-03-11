@@ -53,17 +53,28 @@
         .flash-sale { background: var(--primary); color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; border-left: 5px solid var(--accent); }
 
         /* --- MOBILE --- */
-        @media (max-width: 768px) {
-            header { flex-direction: column; height: auto; padding: 10px; }
-            .main-container { flex-direction: column; }
-            aside { width: 100%; }
-            .grid { grid-template-columns: 1fr 1fr; }
-        }
+        /* --- MOBILE (Lines 56-61) --- */
+@media (max-width: 768px) {
+    header { flex-direction: column; padding: 15px; gap: 12px; height: auto; }
+    .main-container { flex-direction: column; padding: 10px; }
+    aside { width: 100%; margin-bottom: 20px; }
+    .grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+}
 
-        /* --- MODAL --- */
-        #orderModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; align-items: center; justify-content: center; }
-        .modal-content { background: white; padding: 30px; border-radius: 8px; width: 90%; max-width: 400px; }
-        .modal-content input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+/* --- MODAL (Lines 63-66) --- */
+#orderModal { 
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); /* Premium Blur */
+    z-index: 10000; align-items: center; justify-content: center; 
+}
+.modal-content { 
+    background: white; padding: 30px; border-radius: 12px; /* Smoother corners */
+    width: 90%; max-width: 400px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+}
+.modal-content input { 
+    width: 100%; padding: 14px; margin: 12px 0; border: 1px solid #ddd; 
+    border-radius: 6px; box-sizing: border-box; font-size: 1rem;
+}
     </style>
 </head>
 <body>
