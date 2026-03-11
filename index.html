@@ -116,8 +116,7 @@
         <div style="font-weight: bold;">Cart (0)</div>
     </div>
 </header>
-<main>
-<div class="container" style="display: flex; max-width: 1200px; margin: 0 auto;">
+<main class="main-container" style="display: flex; max-width: 1200px; margin: 0 auto;">
     <aside style="width: 250px; padding: 20px;">
         <h2 style="font-size: 1.1rem; margin-top: 0;">Department</h2>
         <ul style="list-style: none; padding: 0; line-height: 2.5;">
@@ -132,81 +131,32 @@
         <div class="flash-sale" style="background: #232f3e; color: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; border-left: 5px solid #febd69;">
             <h2 style="margin: 0; color: #febd69;">FLASH SALE ACTIVE</h2>
             <p>Use Code: <strong>RIZWANFIRST</strong></p>
-            <div id="timer" style="font-size: 1.2rem; font-weight: bold; color: #febd69; margin-top: 10px;">Ends in: 02:00:00</div>
+            <div id="timer" style="font-size: 1.2rem; font-weight: bold; color: #febd69; margin-top: 10px;">Ends in: 00:00:00</div>
         </div>
-        <div class="grid">
-    <div class="product-card" data-category="accessories">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smart Watch">
-        <div class="product-info">
-            <h3>Active Series Smart Watch</h3>
-            <div class="rating">
-                <span style="color: #febd69;">★★★★☆</span> 
-                <span style="color: #007185; font-size: 0.8rem; margin-left: 5px;">(290 reviews)</span>
-            </div>
-            <div class="price">$59.99</div>
-            <button class="buy-btn" onclick="openOrder('Smart Watch')">Add to Cart</button>
-        </div>
-    </div>
 
-    <div class="product-card" data-category="accessories">
-        <span class="discount">10% OFF</span>
-        <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=800&q=80" alt="Gaming Mouse">
-        <div class="product-info">
-            <h3>RGB Precision Gaming Mouse</h3>
-            <div class="rating">
-                <span style="color: #febd69;">★★★★★</span> 
-                <span style="color: #007185; font-size: 0.8rem; margin-left: 5px;">(56 reviews)</span>
-            </div>
-            <div class="price">$25.00</div>
-            <button class="buy-btn" onclick="openOrder('Gaming Mouse')">Add to Cart</button>
-        </div>
-    </div>
-</div>
-    </div>
-</div>
-<div class="product-card" data-category="accessories">
-    <span class="discount">10% OFF</span>
-    <div style="height: 200px; overflow: hidden;">
-        <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=800&q=80" alt="RGB Precision Gaming Mouse" style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="product-info">
-        <h3>RGB Precision Gaming Mouse</h3>
-        <div style="color: #febd69; font-size: 0.85rem; margin: 5px 0;">★★★★★ (56)</div>
-        <div class="price">$25.00</div>
-        <button class="buy-btn" onclick="openOrder('Gaming Mouse')">Add to Cart</button>
-    </div>
-</div>
-            <div class="product-card" data-category="power-banks">
-                <img src="power-bank/powerbank1.jpg" alt="Powerbank">
+        <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+            
+            <div class="product-card" data-category="accessories" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smart Watch" style="width: 100%; border-radius: 5px;">
                 <div class="product-info">
-                    <h3>Ultrafast 20,000mAh Power Bank</h3>
-                    <div class="price">$29.99</div>
-                    <button class="buy-btn" onclick="openOrder('20k Power Bank')">Add to Cart</button>
+                    <h3 style="font-size: 1rem; margin: 10px 0;">Active Series Smart Watch</h3>
+                    <div style="color: #febd69; font-size: 0.9rem;">★★★★☆ <span style="color: #007185; font-size: 0.75rem;">(290)</span></div>
+                    <div style="font-size: 1.2rem; font-weight: bold; margin: 10px 0;">$59.99</div>
+                    <button class="buy-btn" onclick="openOrder('Smart Watch')">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="product-card" data-category="accessories">
-                <img src="power-bank/powerbank2.jpg" alt="Charger">
+            <div class="product-card" data-category="power-banks" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1609592806457-9956121b172d?auto=format&fit=crop&w=800&q=80" alt="Power Bank" style="width: 100%; border-radius: 5px;">
                 <div class="product-info">
-                    <h3>Max Durability USB-C Charger</h3>
-                    <div class="price">$34.50</div>
-                    <button class="buy-btn" onclick="openOrder('USB-C Charger')">Add to Cart</button>
+                    <h3 style="font-size: 1rem; margin: 10px 0;">Ultrafast 20,000mAh Power Bank</h3>
+                    <div style="color: #febd69; font-size: 0.9rem;">★★★★★ <span style="color: #007185; font-size: 0.75rem;">(150)</span></div>
+                    <div style="font-size: 1.2rem; font-weight: bold; margin: 10px 0;">$29.99</div>
+                    <button class="buy-btn" onclick="openOrder('Power Bank')">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="product-card" data-category="wireless-audio">
-    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Earbuds">
-    <div class="product-info">
-        <h3>Pro-Audio Wireless Earbuds</h3>
-        <div style="color: #febd69; font-size: 0.85rem;">★★★★★ (412)</div>
-        <div class="price">$45.00</div>
-        <button class="buy-btn" onclick="openOrder('Wireless Earbuds')">Add to Cart</button>
-    </div>
-</div>
-            </div>
-        </div>
-    </main>
-</div>
+        </div> </div> </main>
 
 <div id="orderModal">
     <div class="modal-content">
