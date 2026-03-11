@@ -87,7 +87,7 @@
     </div>
     <div class="nav-tools">
         <div>Orders</div>
-        <div style="font-weight: bold;">Cart (0)</div>
+        <div id="cart-count" style="font-weight: bold;">Cart (0)</div>
     </div>
 </header>
 
@@ -120,6 +120,7 @@
                     <h3>Active Series Smart Watch</h3>
                     <div class="rating">★★★★☆ <span style="color: #007185; font-size: 0.75rem; margin-left: 5px;">(290)</span></div>
                     <div class="price">$59.99</div>
+                    <button class="buy-btn" onclick="addToCart()">Add to Cart</button>
                     <button class="buy-btn" onclick="openOrder('Smart Watch')">Add to Cart</button>
                 </div>
             </div>
@@ -187,6 +188,22 @@
 </div>
 
 <script>
+    let cartItems = 0;
+
+function addToCart() {
+    cartItems++;
+    document.getElementById('cart-count').innerText = `Cart (${cartItems})`;
+    
+    // Add a little "bounce" animation to the cart so they notice it
+    const cart = document.getElementById('cart-count');
+    cart.style.transform = "scale(1.2)";
+    cart.style.color = "#febd69";
+    
+    setTimeout(() => {
+        cart.style.transform = "scale(1)";
+        cart.style.color = "white";
+    }, 200);
+}
     function searchProducts() {
     const input = document.querySelector('.search-bar input').value.toLowerCase();
     const products = document.querySelectorAll('.product-card');
