@@ -200,7 +200,9 @@
                 localStorage.removeItem('flashSaleEnd');
             }
         }, 1000);
-    }
+    } // This is the end of your function at line 203
+
+    startTimer(); // Add this line here to actually start the clock!
 
     function searchProducts() {
         const input = document.querySelector('.search-bar input').value.toLowerCase();
