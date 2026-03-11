@@ -249,6 +249,41 @@
 
     // Start on load
     startTimer();
+    const cities = ["New York", "London", "Dhaka", "Dubai", "Sydney", "Toronto"];
+    const products = ["Smart Watch", "Power Bank", "Gaming Mouse", "Headphones"];
+
+    function showOrderToast() {
+        const city = cities[Math.floor(Math.random() * cities.length)];
+        const product = products[Math.floor(Math.random() * products.length)];
+        
+        const toast = document.createElement('div');
+        toast.style.cssText = `
+            position: fixed; bottom: 20px; left: 20px; background: white; 
+            padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 10000; border-left: 5px solid #febd69; font-size: 0.85rem;
+            animation: slideIn 0.5s ease-out;
+        `;
+        toast.innerHTML = `<strong>Recent Order!</strong><br>Someone in ${city} just bought a ${product}.`;
+        
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.style.animation = "slideOut 0.5s ease-in";
+            setTimeout(() => toast.remove(), 500);
+        }, 4000);
+    }
+
+    // Add animation styles to the head
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes slideIn { from { transform: translateX(-120%); } to { transform: translateX(0); } }
+        @keyframes slideOut { from { transform: translateX(0); } to { transform: translateX(-120%); } }
+    `;
+    document.head.appendChild(style);
+
+    // Show toast every 25 seconds
+    setInterval(showOrderToast, 25000);
+    setTimeout(showOrderToast, 5000); // Show first one after 5 seconds
 </script>
 
 <a href="https://wa.me/8801410388647" target="_blank" 
